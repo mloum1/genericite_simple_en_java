@@ -6,7 +6,7 @@ public class Paire<A, B> {
 
     // Constructeur sans paramètres
     public Paire() {
-        }
+    }
 
     public Paire(A first, B second) {
         this.first = first;
@@ -33,24 +33,22 @@ public class Paire<A, B> {
         return "(" + first + ", " + second + ")";
     }
 
-
-    //parametrage des methodes d'instance 
-    // cette methode s'appliquera sur les objets de type A 
-    public A  methodeA() {
+    // parametrage des methodes d'instance
+    // cette methode s'appliquera sur les objets de type A
+    public A methodeA() {
         return first;
     }
 
-
     // cette methode s'appliquera sur les objets de type B
-    public B  methodeB() {
+    public B methodeB() {
         return second;
     }
 
+    // methode pour la comparaison des deux premières composantes de deux paires
 
-
-
-
-
+    public <C> boolean memeFirst(Paire<A, C> p) {
+        return p.getA() == this.getB();
+    }
 
     ///
 
@@ -59,5 +57,12 @@ public class Paire<A, B> {
         Integer i = p.getB();
         String s = p.getA();
         System.out.println(p);
+        System.out.println(p.methodeA());
+        System.out.println(p.methodeB());
+
+        Paire<String, Integer> p1 = new Paire<String, Integer>("deux", 2);
+
+        System.out.println("verification de type ");
+        System.out.println(p.memeFirst(p1));
     }
 }
