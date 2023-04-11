@@ -34,6 +34,20 @@ public class Paire<A, B> {
     }
 
 
+    //parametrage des methodes d'instance 
+    // cette methode s'appliquera sur les objets de type A 
+    public A  methodeA() {
+        return first;
+    }
+
+
+    // cette methode s'appliquera sur les objets de type B
+    public B  methodeB() {
+        return second;
+    }
+
+
+
 
 
 
